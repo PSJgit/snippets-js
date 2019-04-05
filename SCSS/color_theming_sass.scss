@@ -1,0 +1,47 @@
+// color/theme mixin 
+
+// Helper theme mixin
+// @param $name: name of the theme (HTML class)
+// @param $color: color of the theme
+
+// ref https://www.sitepoint.com/dealing-color-schemes-sass/
+@mixin theme($name, $color) {
+  .#{$name} {
+    h1 {
+      color: $color;
+      &::before {
+        background: $color;
+      }
+    }
+    button {
+      background-color: $color;
+      [class^="icon-"], [class*=" icon-"] {
+        color: $white;
+      }
+      &:hover {
+        background: darken($color, 15%) !important;
+      }
+      &.notClickable:hover {
+        background: $color !important;
+      }
+    }
+  }
+}
+
+/* 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@each $key, $value in $colorMap {
+  @include theme($key, $value);
+}
+
+// in vars
+
+/* color classes map = add to root container
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$colorMap: (
+  theme-1   : $color1,
+  theme-2   : $color2,
+  theme-3   : $color3
+);
