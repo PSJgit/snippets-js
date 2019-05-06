@@ -1,6 +1,10 @@
-// Type Coercion - a string, a number, a boolean
+// Type Coercion 
 
-const value1 = false + 12
-const type = typeof value
-const value2 = true + false
-console.log(type, value, value2)
+const value_1 = false + 12  // 12 (number)
+
+const value_2 = true + false // 1 (number)
+
+const value_3 = true + '' // 'true' (string)
+
+const value_4 = !!'false' // 'true' (boolean)
+
