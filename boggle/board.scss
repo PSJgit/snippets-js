@@ -1,0 +1,26 @@
+$boardSize : 400px;
+$boardHeight: 400px;
+
+#boggle-board {
+ 	height: $boardHeight;
+	width: $boardHeight;
+	background: black;
+	margin: 100px auto 0;
+	.dice {
+		height: ($boardSize/4) - 10px;
+		width: ($boardSize/4) - 10px ;
+		display: inline-flex;
+		margin: 5px;
+		background: #eee;
+		p {
+			display: flex;
+			align-items: center;
+			margin: auto;
+		}
+	}
+}
+//flex-start
+//The yellow list is set to flex-end
+//The blue list is set to center
+//The green list is set to baseline
+//The pink list is set to stretch
